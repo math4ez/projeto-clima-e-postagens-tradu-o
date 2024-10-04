@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Página 1 - Clima</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" style="background-color: #f4f4f4;">
+  <div class="weather-container" *ngIf="weatherData; else loading">
+    <h2>Clima no Rio de Janeiro</h2>
+    <div class="weather-card">
+      <h3>Temperatura: {{ weatherData.main.temp }}°C</h3>
+      <p>Descrição: {{ weatherData.weather[0].description }}</p>
+      <p>Umidade: {{ weatherData.main.humidity }}%</p>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-message">
+      <ion-spinner></ion-spinner>
+      <p>Carregando...</p>
+    </div>
+  </ng-template>
+
+  <!-- Botão de Voltar para Home estilizado -->
+  <ion-button expand="full" color="secondary" routerLink="/" fill="clear">
+    <ion-icon slot="icon-only" name="home"></ion-icon>
+  </ion-button>
+
+  <!-- Botão para Página 2 com ícone de seta centralizado sem fundo colorido -->
+  <ion-button expand="full" routerLink="/page2" fill="clear" class="ion-text-center">
+    <ion-icon name="arrow-forward" style="font-size: 24px;"></ion-icon>
+  </ion-button>
+</ion-content>

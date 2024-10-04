@@ -1,0 +1,40 @@
+/* src/app/page2/page2.page.scss */
+
+.page2-container {
+    background-color: #f4f4f4; /* Cor de fundo clara */
+    text-align: center; /* Centraliza o texto */
+    padding: 20px; /* Adiciona padding extra */
+  }
+  
+  .error-message {
+    margin-bottom: 20px; /* Espaçamento inferior */
+  }
+  
+  ion-card {
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    margin-bottom: 20px; /* Espaçamento entre cartões */
+  }
+  
+  .post-item {
+    border-radius: 12px; /* Bordas arredondadas */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    background-color: white; /* Fundo branco para os itens */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  }
+  
+  .post-item h2 {
+    color: var(--ion-color-primary); /* Cor do título */
+  }
+  
+  .loading-message {
+    text-align: center; /* Centraliza a mensagem */
+    font-size: 16px; /* Tamanho da fonte da mensagem */
+    color: var(--ion-color-medium); /* Cor do texto médio */
+  }
+  
+  /* Estilo do botão */
+  ion-button {
+    margin-top: 20px; /* Espaçamento superior */
+  }
+  

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Página 2 - Postagens</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding page2-container" style="background-color: #f4f4f4;">
+  <!-- Botão de Home antes do conteúdo, apenas com o ícone -->
+  <ion-button expand="full" color="secondary" routerLink="/" fill="clear">
+    <ion-icon slot="icon-only" name="home"></ion-icon> <!-- Ícone de Home apenas -->
+  </ion-button>
+
+  <div *ngIf="errorMessage" class="error-message">
+    <ion-card color="danger">
+      <ion-card-header>
+        <ion-card-title>Erro</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ errorMessage }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-list *ngIf="posts.length > 0">
+    <ion-item *ngFor="let post of posts" class="post-item">
+      <ion-label>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-spinner *ngIf="!errorMessage && posts.length === 0"></ion-spinner>
+  <p *ngIf="!errorMessage && posts.length === 0" class="loading-message">Carregando postagens...</p>
+
+  <ion-button expand="full" color="secondary" routerLink="/page1">
+    <ion-icon slot="start" name="paper-plane"></ion-icon>
+    Voltar para Página 1
+  </ion-button>
+</ion-content>
